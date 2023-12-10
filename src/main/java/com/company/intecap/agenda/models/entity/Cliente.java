@@ -19,7 +19,7 @@ public class Cliente implements Serializable {
     private Long id;
 
     @NotEmpty
-    @Column(unique = true, length = 200) //Validacion valor unico y tamaño de campo 200
+    @Column(unique = true, length = 200) // Validacion valor unico y tamaño de campo 200
     private String nombre;
 
     @NotEmpty
@@ -29,14 +29,13 @@ public class Cliente implements Serializable {
     @Email
     private String email;
 
-    @NotNull
-    @Column(name = "fecha_alta")
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date createAt;
+    @NotEmpty
+    private String telefono;
+
+    @NotEmpty
+    private String mensaje;
 
     // Getter y Setter
-
 
     public Long getId() {
         return id;
@@ -70,11 +69,20 @@ public class Cliente implements Serializable {
         this.email = email;
     }
 
-    public Date getCreateAt() {
-        return createAt;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
 }

@@ -56,7 +56,7 @@ public class ClienteController {
 
     @RequestMapping(value = "/listar", method = RequestMethod.GET)
     public String listar(Model model) {
-        model.addAttribute("titulo", "Listado de Clientes");
+        model.addAttribute("titulo", "Listado de Contactos");
         model.addAttribute("clientes", clienteService.findAll());
 
         return "listar";
@@ -69,7 +69,7 @@ public class ClienteController {
         Cliente cliente = new Cliente();
 
         model.put("cliente", cliente);
-        model.put("titulo", "Formulario de Clientes");
+        model.put("titulo", "Formulario de Contacto");
         return "form";
     }
 
